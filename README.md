@@ -1,5 +1,5 @@
 # Object Pool Design Pattern (Java)
-**Object Pool** reuse objects that are expensive to create.
+**Object Pool** set of objects ready to use.
 ![](https://github.com/shamy1st/design-pattern-object-pool/blob/main/uml.png)
 ### Problem:
 
