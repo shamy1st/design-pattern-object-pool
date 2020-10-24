@@ -25,21 +25,21 @@ public class JDBCConnectionPool extends ObjectPool {
     }
 
     @Override
+    public void expire(Object o) {
+        try {
+            ((Connection)o).close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public boolean validate(Object o) {
         try {
             return (!((Connection)o).isClosed());
         } catch (SQLException e) {
             e.printStackTrace();
             return (false);
-        }
-    }
-
-    @Override
-    public void dead(Object o) {
-        try {
-            ((Connection)o).close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }
