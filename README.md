@@ -11,12 +11,12 @@ Database connection is costly, then we need to make a **JDBCConnectionPool**.
                     "user", "password");
 
             // Get a connection:
-            Connection connection = (Connection) pool.takeOut();
+            Connection connection = (Connection) pool.checkOut();
 
             //Do some queries
 
             // Return the connection:
-            pool.takeIn(connection);
+            pool.checkIn(connection);
         }
     }
 ### Solution:
